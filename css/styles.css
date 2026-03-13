@@ -1,63 +1,114 @@
 body{
-font-family: Arial, sans-serif;
+
 margin:0;
-padding:0;
+font-family:Arial;
 background:#0f172a;
 color:white;
+
 }
 
-header{
+.header{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px;
+padding:20px 40px;
 background:#020617;
+
 }
 
 nav a{
-margin:10px;
-text-decoration:none;
+
+margin:0 12px;
 color:white;
+text-decoration:none;
+
+}
+
+.btn-primary{
+
+background:#3b82f6;
+padding:10px 18px;
+border-radius:5px;
+color:white;
+
+}
+
+.btn-secondary{
+
+border:1px solid white;
+padding:10px 18px;
+border-radius:5px;
+
 }
 
 .hero{
+
+height:80vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-padding:100px 20px;
-background:linear-gradient(45deg,#0f172a,#1e3a8a);
+background:linear-gradient(135deg,#0f172a,#1e3a8a);
+
 }
 
-.hero h2{
-font-size:40px;
-}
+.hero h1{
 
-.btn{
-background:#2563eb;
-padding:12px 20px;
-color:white;
-text-decoration:none;
-border-radius:6px;
+font-size:48px;
+
 }
 
 .services{
-padding:60px 20px;
+
+padding:80px 40px;
 text-align:center;
+
 }
 
-.service{
-margin:20px;
-padding:20px;
+.services-grid{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+
+}
+
+.service-card{
+
 background:#1e293b;
+padding:30px;
 border-radius:8px;
+
+}
+
+.case-study{
+
+padding:80px;
+text-align:center;
+background:#1e40af;
+
+}
+
+.stats{
+
+display:flex;
+justify-content:center;
+gap:60px;
+
 }
 
 .cta{
+
 text-align:center;
 padding:80px;
-background:#1e40af;
+
 }
 
 footer{
-text-align:center;
-padding:20px;
+
 background:#020617;
+padding:20px;
+text-align:center;
+
 }
