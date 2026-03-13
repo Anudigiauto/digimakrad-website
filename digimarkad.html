@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIGIMARKAD – AI-Powered Digital Marketing Agency | Canada, USA, India</title>
+<meta name="description" content="Data-driven digital marketing agency helping startups, SMBs, and enterprises grow with AI-powered SEO, Paid Ads, Social Media, and Content Marketing across Canada, USA, and India.">
+<meta name="keywords" content="Digital Marketing Agency, SEO Services, Digital Marketing Canada, Digital Marketing USA, Digital Marketing India, AI Marketing Agency, Growth Marketing">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #0ea5e9;
+    --blue-dark: #0284c7;
+    --blue-dim: rgba(14,165,233,0.12);
+    --dark: #050b14;
+    --dark2: #0b1624;
+    --dark3: #111d2e;
+    --white: #f0f6ff;
+    --muted: #8ba4c0;
+    --border: rgba(14,165,233,0.18);
+    --font-head: 'Syne', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--dark); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.1rem 5vw;
+    background: rgba(5,11,20,0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    transition: background 0.3s;
+  }
+  .nav-logo { font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; color: var(--blue); letter-spacing: -0.02em; text-decoration: none; }
+  .nav-logo span { color: var(--white); }
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue); }
+  .nav-cta { background: var(--blue); color: #fff; padding: 0.55rem 1.4rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; text-decoration: none; letter-spacing: 0.03em; transition: background 0.2s; white-space: nowrap; }
+  .nav-cta:hover { background: var(--blue-dark); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+  .hamburger span { width: 24px; height: 2px; background: var(--white); display: block; transition: 0.3s; }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 10rem 5vw 6rem;
+    position: relative; overflow: hidden;
+    background: var(--dark);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.06;
+    background-image: linear-gradient(var(--blue) 1px, transparent 1px), linear-gradient(90deg, var(--blue) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-glow { position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 700px; height: 400px; background: radial-gradient(ellipse, rgba(14,165,233,0.18) 0%, transparent 70%); pointer-events: none; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); border-radius: 100px; padding: 0.4rem 1rem; font-size: 0.78rem; color: var(--blue); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; margin-bottom: 2rem; position: relative; z-index: 1; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); display: inline-block; animation: pulse 1.8s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(1.5)} }
+  .hero h1 { font-family: var(--font-head); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; position: relative; z-index: 1; max-width: 900px; }
+  .hero h1 em { font-style: normal; color: var(--blue); }
+  .hero-sub { font-size: clamp(1rem, 1.8vw, 1.2rem); color: var(--muted); max-width: 580px; line-height: 1.7; margin-top: 1.5rem; position: relative; z-index: 1; }
+  .hero-btns { display: flex; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; position: relative; z-index: 1; }
+  .btn-primary { background: var(--blue); color: #fff; padding: 0.85rem 2rem; border-radius: 5px; font-weight: 600; text-decoration: none; font-size: 0.95rem; transition: background 0.2s, transform 0.1s; border: none; cursor: pointer; }
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  .btn-outline { border: 1.5px solid var(--border); color: var(--white); padding: 0.85rem 2rem; border-radius: 5px; font-weight: 500; text-decoration: none; font-size: 0.95rem; transition: border-color 0.2s, background 0.2s; background: transparent; cursor: pointer; }
+  .btn-outline:hover { border-color: var(--blue); background: var(--blue-dim); }
+  .hero-stats { display: flex; gap: 3rem; margin-top: 4rem; position: relative; z-index: 1; flex-wrap: wrap; }
+  .hero-stat-num { font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--blue); }
+  .hero-stat-label { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.2rem; }
+  .hero-clients { display: flex; align-items: center; gap: 1rem; margin-top: 3rem; position: relative; z-index: 1; }
+  .hero-avatars { display: flex; }
+  .hero-avatars span { width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--dark); background: var(--blue-dim); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; color: var(--blue); margin-left: -10px; }
+  .hero-avatars span:first-child { margin-left: 0; }
+  .hero-clients-text { font-size: 0.85rem; color: var(--muted); }
+  .hero-clients-text strong { color: var(--white); }
+
+  /* MARQUEE */
+  .marquee-wrap { overflow: hidden; padding: 1.5rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--dark2); }
+  .marquee { display: flex; gap: 3rem; animation: marquee 22s linear infinite; white-space: nowrap; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  .marquee-item { font-family: var(--font-head); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 0.8rem; }
+  .marquee-dot { color: var(--blue); font-size: 1.2rem; }
+
+  /* SECTIONS */
+  section { padding: 6rem 5vw; }
+  .section-tag { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue); margin-bottom: 1rem; }
+  .section-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
+  .section-sub { color: var(--muted); font-size: 1.05rem; line-height: 1.7; margin-top: 0.8rem; max-width: 560px; }
+
+  /* SERVICES */
+  #services { background: var(--dark2); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5px; margin-top: 3rem; border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .service-card { background: var(--dark3); padding: 2.2rem; transition: background 0.25s; position: relative; overflow: hidden; }
+  .service-card:hover { background: rgba(14,165,233,0.06); }
+  .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--blue); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+  .service-card:hover::after { transform: scaleX(1); }
+  .service-icon { font-size: 1.8rem; margin-bottom: 1rem; }
+  .service-card h3 { font-family: var(--font-head); font-size: 1.15rem; font-weight: 700; margin-bottom: 0.6rem; }
+  .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+  .service-card ul { list-style: none; margin-top: 0.8rem; }
+  .service-card ul li { font-size: 0.83rem; color: var(--muted); padding: 0.22rem 0; display: flex; align-items: center; gap: 0.4rem; }
+  .service-card ul li::before { content: '→'; color: var(--blue); font-size: 0.75rem; }
+
+  /* WHY US */
+  .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
+  .why-list { list-style: none; margin-top: 1.5rem; }
+  .why-list li { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+  .why-list li:last-child { border-bottom: none; }
+  .why-num { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--blue); opacity: 0.4; min-width: 40px; }
+  .why-text h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .why-text p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+  .why-visual { background: var(--dark2); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+  .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border); }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-label { font-size: 0.85rem; color: var(--muted); }
+  .metric-val { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue); }
+  .metric-change { font-size: 0.78rem; color: #22c55e; background: rgba(34,197,94,0.1); padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 600; }
+
+  /* PROCESS */
+  #process { background: var(--dark2); }
+  .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0; margin-top: 3.5rem; position: relative; }
+  .process-steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, var(--blue), transparent); }
+  .process-step { text-align: center; padding: 1.5rem 1rem; position: relative; z-index: 1; }
+  .step-num { width: 56px; height: 56px; border-radius: 50%; border: 2px solid var(--blue); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; font-family: var(--font-head); font-weight: 800; font-size: 1.1rem; color: var(--blue); background: var(--dark2); }
+  .process-step h4 { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; }
+  .process-step p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+  /* INDUSTRIES */
+  .industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin-top: 3rem; }
+  .industry-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem 1rem; text-align: center; transition: border-color 0.2s, background 0.2s; cursor: default; }
+  .industry-card:hover { border-color: var(--blue); background: var(--blue-dim); }
+  .industry-icon { font-size: 2rem; margin-bottom: 0.7rem; }
+  .industry-card h4 { font-family: var(--font-head); font-size: 0.88rem; font-weight: 700; }
+
+  /* CASE STUDIES */
+  #cases { background: var(--dark2); }
+  .cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .case-card { background: var(--dark3); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.25s; }
+  .case-card:hover { transform: translateY(-4px); }
+  .case-header { padding: 1.8rem; border-bottom: 1px solid var(--border); }
+  .case-tag-row { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+  .tag { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.25rem 0.7rem; border-radius: 4px; background: var(--blue-dim); color: var(--blue); border: 1px solid rgba(14,165,233,0.25); }
+  .case-card h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; line-height: 1.3; }
+  .case-metrics { padding: 1.5rem; display: flex; gap: 1rem; }
+  .case-metric { flex: 1; }
+  .case-metric-val { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: var(--blue); }
+  .case-metric-label { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+  .case-desc { padding: 0 1.5rem 1.5rem; font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+
+  /* TESTIMONIALS */
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .testi-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+  .testi-stars { color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+  .testi-text { font-size: 0.95rem; line-height: 1.7; color: var(--white); margin-bottom: 1.5rem; }
+  .testi-author { display: flex; align-items: center; gap: 0.8rem; }
+  .testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--blue-dim); border: 1.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: var(--blue); }
+  .testi-name { font-weight: 600; font-size: 0.9rem; }
+  .testi-role { font-size: 0.78rem; color: var(--muted); }
+
+  /* BLOG */
+  #blog { background: var(--dark2); }
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .blog-card { background: var(--dark3); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s; cursor: pointer; }
+  .blog-card:hover { transform: translateY(-3px); }
+  .blog-thumb { height: 140px; background: linear-gradient(135deg, var(--blue-dim), rgba(14,165,233,0.04)); display: flex; align-items: center; justify-content: center; font-size: 3rem; border-bottom: 1px solid var(--border); }
+  .blog-body { padding: 1.5rem; }
+  .blog-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem; }
+  .blog-card h4 { font-family: var(--font-head); font-size: 1rem; font-weight: 700; line-height: 1.35; margin-bottom: 0.6rem; }
+  .blog-card p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .blog-meta { display: flex; justify-content: space-between; margin-top: 1rem; font-size: 0.78rem; color: var(--muted); }
+
+  /* TOOLS */
+  .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .tool-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+  .tool-card h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .tool-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+  .tool-input { width: 100%; background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 0.7rem 1rem; color: var(--white); font-family: var(--font-body); font-size: 0.9rem; margin-bottom: 0.8rem; outline: none; transition: border-color 0.2s; }
+  .tool-input:focus { border-color: var(--blue); }
+  .tool-result { background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 1rem; font-size: 0.88rem; color: var(--muted); min-height: 60px; margin-top: 0.8rem; line-height: 1.6; }
+
+  /* ROI CALCULATOR */
+  .roi-calc label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; margin-top: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .roi-output { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.2rem; }
+  .roi-metric { background: var(--dark3); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+  .roi-val { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue); }
+  .roi-lbl { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* FAQ */
+  #faq { background: var(--dark2); }
+  .faq-list { max-width: 780px; margin: 3rem auto 0; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q { width: 100%; background: none; border: none; color: var(--white); font-family: var(--font-body); font-size: 1rem; font-weight: 500; padding: 1.4rem 0; text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; transition: color 0.2s; }
+  .faq-q:hover { color: var(--blue); }
+  .faq-q .chevron { font-size: 1.1rem; transition: transform 0.3s; color: var(--muted); min-width: 20px; }
+  .faq-q.open .chevron { transform: rotate(180deg); color: var(--blue); }
+  .faq-a { overflow: hidden; max-height: 0; transition: max-height 0.35s ease; }
+  .faq-a-inner { padding-bottom: 1.2rem; font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  /* CONTACT */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; }
+  .contact-info h3 { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem; }
+  .contact-detail { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
+  .contact-icon { width: 42px; height: 42px; border-radius: 8px; background: var(--blue-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .contact-detail h5 { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.2rem; }
+  .contact-detail p { font-size: 0.85rem; color: var(--muted); }
+  .offices { margin-top: 2rem; }
+  .offices h4 { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+  .office-list { display: flex; flex-direction: column; gap: 0.8rem; }
+  .office { display: flex; gap: 0.6rem; align-items: center; font-size: 0.87rem; color: var(--muted); }
+  .office-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.06em; }
+  .form-input { width: 100%; background: var(--dark2); border: 1px solid var(--border); border-radius: 6px; padding: 0.75rem 1rem; color: var(--white); font-family: var(--font-body); font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .form-input:focus { border-color: var(--blue); }
+  textarea.form-input { min-height: 120px; resize: vertical; }
+  select.form-input option { background: var(--dark2); }
+
+  /* FOOTER */
+  footer { background: var(--dark); border-top: 1px solid var(--border); padding: 4rem 5vw 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+  .footer-brand p { font-size: 0.88rem; color: var(--muted); line-height: 1.7; margin-top: 0.8rem; max-width: 280px; }
+  .footer-newsletter { margin-top: 1.5rem; display: flex; gap: 0.5rem; }
+  .footer-input { flex: 1; background: var(--dark2); border: 1px solid var(--border); border-radius: 5px; padding: 0.6rem 0.8rem; color: var(--white); font-family: var(--font-body); font-size: 0.85rem; outline: none; }
+  .footer-input:focus { border-color: var(--blue); }
+  .footer-col h5 { font-family: var(--font-head); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 0.6rem; }
+  .footer-col ul li a { font-size: 0.87rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .footer-col ul li a:hover { color: var(--blue); }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 1rem; }
+  .footer-bottom p { font-size: 0.82rem; color: var(--muted); }
+  .social-links { display: flex; gap: 0.8rem; }
+  .social-link { width: 36px; height: 36px; border-radius: 6px; background: var(--dark2); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: var(--muted); text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+  .social-link:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* DIVIDER */
+  .blue-line { width: 60px; height: 3px; background: var(--blue); border-radius: 2px; margin: 1rem 0 0; }
+
+  /* TECH STACK */
+  .stack-grid { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+  .stack-item { background: var(--dark2); border: 1px solid var(--border); border-radius: 8px; padding: 0.7rem 1.2rem; font-size: 0.85rem; font-weight: 600; color: var(--muted); display: flex; align-items: center; gap: 0.5rem; transition: border-color 0.2s, color 0.2s; }
+  .stack-item:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* GLOBAL REACH */
+  .reach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+  .reach-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 10px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .reach-flag { font-size: 2rem; }
+  .reach-info h4 { font-family: var(--font-head); font-weight: 700; font-size: 0.95rem; }
+  .reach-info p { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+  /* LEAD CAPTURE */
+  .lead-section { background: linear-gradient(135deg, rgba(14,165,233,0.12), transparent); border: 1px solid var(--border); border-radius: 16px; padding: 3.5rem; text-align: center; margin-top: 4rem; }
+  .lead-section h2 { font-family: var(--font-head); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.8rem; }
+  .lead-section p { color: var(--muted); max-width: 500px; margin: 0 auto 2rem; line-height: 1.7; }
+  .lead-form { display: flex; gap: 0.8rem; max-width: 480px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .lead-form input { flex: 1; min-width: 200px; background: var(--dark2); border: 1px solid var(--border); border-radius: 6px; padding: 0.8rem 1rem; color: var(--white); font-family: var(--font-body); font-size: 0.9rem; outline: none; }
+  .lead-form input:focus { border-color: var(--blue); }
+
+  /* MOBILE NAV */
+  .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--dark); z-index: 200; flex-direction: column; justify-content: center; align-items: center; gap: 2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--white); text-decoration: none; letter-spacing: -0.02em; }
+  .mobile-menu a:hover { color: var(--blue); }
+  .mobile-close { position: absolute; top: 1.5rem; right: 5vw; font-size: 1.5rem; cursor: pointer; color: var(--muted); background: none; border: none; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-visual { position: relative; }
+  .about-card { background: var(--dark2); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem; }
+  .founder-name { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
+  .founder-title { font-size: 0.85rem; color: var(--blue); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1rem; }
+  .founder-bio { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+  .about-cert { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .cert-badge { background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 0.4rem 0.8rem; font-size: 0.75rem; font-weight: 600; color: var(--blue); }
+
+  /* SCROLL ANIMATE */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* CHAT WIDGET */
+  .chat-btn { position: fixed; bottom: 2rem; right: 2rem; z-index: 500; width: 54px; height: 54px; border-radius: 50%; background: var(--blue); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: 0 4px 20px rgba(14,165,233,0.4); transition: transform 0.2s; }
+  .chat-btn:hover { transform: scale(1.08); }
+  .chat-box { position: fixed; bottom: 5rem; right: 2rem; z-index: 500; width: 300px; background: var(--dark2); border: 1px solid var(--border); border-radius: 14px; padding: 1.2rem; display: none; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+  .chat-box.open { display: block; }
+  .chat-header { font-family: var(--font-head); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.8rem; display: flex; justify-content: space-between; align-items: center; }
+  .chat-messages { min-height: 120px; max-height: 200px; overflow-y: auto; margin-bottom: 0.8rem; }
+  .chat-msg { font-size: 0.82rem; line-height: 1.5; padding: 0.5rem 0.8rem; border-radius: 8px; margin-bottom: 0.5rem; }
+  .chat-msg.bot { background: var(--dark3); color: var(--muted); }
+  .chat-msg.user { background: var(--blue-dim); color: var(--white); text-align: right; }
+  .chat-input-row { display: flex; gap: 0.5rem; }
+  .chat-input-row input { flex: 1; background: var(--dark3); border: 1px solid var(--border); border-radius: 6px; padding: 0.5rem 0.7rem; color: var(--white); font-family: var(--font-body); font-size: 0.82rem; outline: none; }
+  .chat-send { background: var(--blue); border: none; border-radius: 6px; padding: 0.5rem 0.8rem; color: #fff; cursor: pointer; font-size: 0.9rem; }
+
+  @media (max-width: 900px) {
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .why-grid, .contact-grid, .about-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps::before { display: none; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    .lead-section { padding: 2rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#cases" onclick="closeMobile()">Case Studies</a>
+  <a href="#blog" onclick="closeMobile()">Blog</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">DIGIM<span>ARK</span>AD</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Case Studies</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get Free Audit</a>
+  <div class="hamburger" onclick="document.getElementById('mobileMenu').classList.add('open')">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero">
+    <div class="hero-tag">AI-Powered Digital Marketing</div>
+    <h1>Data-Driven Marketing<br>That <em>Scales</em> Your Business</h1>
+    <p class="hero-sub">Helping startups, SMBs, and enterprises grow with AI-powered marketing strategies across Canada, USA, and India.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Get Free Marketing Audit</a>
+      <a href="#contact" class="btn-outline">Book Strategy Call →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">320%</div>
+        <div class="hero-stat-label">Avg Revenue Growth</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">500+</div>
+        <div class="hero-stat-label">Brands Scaled</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3</div>
+        <div class="hero-stat-label">Global Regions</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">98%</div>
+        <div class="hero-stat-label">Client Retention</div>
+      </div>
+    </div>
+    <div class="hero-clients">
+      <div class="hero-avatars">
+        <span>SK</span><span>JM</span><span>AP</span><span>RL</span><span>TK</span>
+      </div>
+      <p class="hero-clients-text"><strong>500+ businesses</strong> scaled across 3 continents</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span class="marquee-item"><span class="marquee-dot">◆</span> SEO Optimization</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Google Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> AI Lead Generation</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Social Media Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Content Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Marketing Automation</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Predictive Analytics</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> CRO Optimization</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Facebook Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Email Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> LinkedIn Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> TikTok Ads</span>
+    <!-- duplicate for infinite scroll -->
+    <span class="marquee-item"><span class="marquee-dot">◆</span> SEO Optimization</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Google Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> AI Lead Generation</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Social Media Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Content Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Marketing Automation</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Predictive Analytics</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> CRO Optimization</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Facebook Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> Email Marketing</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> LinkedIn Ads</span>
+    <span class="marquee-item"><span class="marquee-dot">◆</span> TikTok Ads</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Full-Stack Digital<br>Marketing Services</h2>
+    <div class="blue-line"></div>
+    <p class="section-sub">From AI-powered lead gen to conversion-optimized funnels — everything you need to dominate your market.</p>
+  </div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">🔍</div>
+      <h3>SEO Services</h3>
+      <p>Rank #1 on Google with our data-driven search strategies.</p>
+      <ul>
+        <li>Technical SEO Audits</li>
+        <li>On-Page Optimization</li>
+        <li>Off-Page & Link Building</li>
+        <li>Local & Enterprise SEO</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📣</div>
+      <h3>Paid Advertising</h3>
+      <p>Maximize ROI with precision-targeted ad campaigns.</p>
+      <ul>
+        <li>Google Ads & PPC</li>
+        <li>Facebook & Instagram Ads</li>
+        <li>LinkedIn & TikTok Ads</li>
+        <li>YouTube Advertising</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📲</div>
+      <h3>Social Media Marketing</h3>
+      <p>Build community, drive engagement, and grow your brand.</p>
+      <ul>
+        <li>Content Creation & Strategy</li>
+        <li>Community Management</li>
+        <li>Paid Social Campaigns</li>
+        <li>Growth Strategies</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">✍️</div>
+      <h3>Content Marketing</h3>
+      <p>Authority-building content that converts readers to buyers.</p>
+      <ul>
+        <li>Blog Writing & SEO Content</li>
+        <li>Copywriting & Messaging</li>
+        <li>Email Marketing Sequences</li>
+        <li>Website Content Strategy</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🤖</div>
+      <h3>AI Marketing Solutions</h3>
+      <p>Leverage artificial intelligence to scale faster.</p>
+      <ul>
+        <li>AI-Powered Lead Generation</li>
+        <li>Chatbots & Automation</li>
+        <li>Predictive Analytics</li>
+        <li>Marketing Automation</li>
+      </ul>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">📊</div>
+      <h3>Data & Analytics</h3>
+      <p>Decisions backed by real data, not guesswork.</p>
+      <ul>
+        <li>Marketing Dashboards</li>
+        <li>Customer Analytics</li>
+        <li>Performance Tracking</li>
+        <li>Conversion Optimization</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--dark2);">
+  <div class="about-grid reveal">
+    <div>
+      <div class="section-tag">About DIGIMARKAD</div>
+      <h2 class="section-title">Marketing That<br>Moves the Needle</h2>
+      <div class="blue-line"></div>
+      <p style="color: var(--muted); line-height: 1.8; margin-top: 1.5rem; font-size: 0.95rem;">DIGIMARKAD was founded with a single mission: to give ambitious brands the same marketing firepower that Fortune 500s use — regardless of size or budget.</p>
+      <p style="color: var(--muted); line-height: 1.8; margin-top: 1rem; font-size: 0.95rem;">We are a team of growth marketers, data scientists, creatives, and technologists operating across Canada, USA, and India — bringing global best practices and local market intelligence to every campaign.</p>
+      <ul class="why-list" style="margin-top: 2rem;">
+        <li>
+          <div class="why-num">01</div>
+          <div class="why-text">
+            <h4>Our Mission</h4>
+            <p>Democratize enterprise-grade marketing for startups and SMBs worldwide through AI and data-driven strategies.</p>
+          </div>
+        </li>
+        <li>
+          <div class="why-num">02</div>
+          <div class="why-text">
+            <h4>Our Vision</h4>
+            <p>To be the #1 AI marketing agency trusted by growth-stage companies across North America and South Asia.</p>
+          </div>
+        </li>
+        <li>
+          <div class="why-num">03</div>
+          <div class="why-text">
+            <h4>Our Philosophy</h4>
+            <p>Every dollar spent must be tracked. Every campaign must be measurable. Every result must be scalable.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="founder-name">DIGIMARKAD Team</div>
+        <div class="founder-title">Digital Marketing Experts</div>
+        <p class="founder-bio">Our certified team of marketers, data analysts, and creative strategists brings decades of combined experience scaling brands across e-commerce, SaaS, healthcare, finance, and retail sectors globally.</p>
+        <div class="about-cert">
+          <span class="cert-badge">Google Partner</span>
+          <span class="cert-badge">Meta Blueprint</span>
+          <span class="cert-badge">HubSpot Certified</span>
+          <span class="cert-badge">Semrush Certified</span>
+        </div>
+        <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+          <div class="why-text" style="margin-bottom: 1rem;">
+            <h4 style="font-family: var(--font-head); font-size: 0.88rem; margin-bottom: 0.3rem;">Our Process</h4>
+            <p style="font-size: 0.82rem; color: var(--muted); line-height: 1.6;">Audit → Strategy → Execute → Optimize → Scale</p>
+          </div>
+          <div style="display: flex; gap: 1.5rem; margin-top: 1.5rem;">
+            <div>
+              <div style="font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--blue);">10+</div>
+              <div style="font-size: 0.78rem; color: var(--muted);">Years Experience</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--blue);">30+</div>
+              <div style="font-size: 0.78rem; color: var(--muted);">Team Members</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: var(--blue);">$50M+</div>
+              <div style="font-size: 0.78rem; color: var(--muted);">Ad Spend Managed</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section id="industries">
+  <div class="reveal">
+    <div class="section-tag">Industries We Serve</div>
+    <h2 class="section-title">Built for Your Vertical</h2>
+    <div class="blue-line"></div>
+  </div>
+  <div class="industries-grid reveal">
+    <div class="industry-card"><div class="industry-icon">🛒</div><h4>E-Commerce</h4></div>
+    <div class="industry-card"><div class="industry-icon">💻</div><h4>SaaS & Tech</h4></div>
+    <div class="industry-card"><div class="industry-icon">🚀</div><h4>Startups</h4></div>
+    <div class="industry-card"><div class="industry-icon">🏢</div><h4>Enterprises</h4></div>
+    <div class="industry-card"><div class="industry-icon">🏥</div><h4>Healthcare</h4></div>
+    <div class="industry-card"><div class="industry-icon">🏦</div><h4>Finance & Fintech</h4></div>
+    <div class="industry-card"><div class="industry-icon">🏠</div><h4>Real Estate</h4></div>
+    <div class="industry-card"><div class="industry-icon">🎓</div><h4>Education</h4></div>
+  </div>
+
+  <!-- GLOBAL REACH -->
+  <div style="margin-top: 4rem;">
+    <div class="section-tag">Global Reach</div>
+    <h2 class="section-title" style="font-size: clamp(1.5rem, 3vw, 2.2rem);">Serving Clients Worldwide</h2>
+    <div class="reach-grid reveal" style="margin-top: 1.5rem;">
+      <div class="reach-card"><div class="reach-flag">🇨🇦</div><div class="reach-info"><h4>Canada</h4><p>Toronto, Vancouver, Calgary</p></div></div>
+      <div class="reach-card"><div class="reach-flag">🇺🇸</div><div class="reach-info"><h4>United States</h4><p>New York, LA, Chicago</p></div></div>
+      <div class="reach-card"><div class="reach-flag">🇮🇳</div><div class="reach-info"><h4>India</h4><p>Mumbai, Delhi, Bangalore</p></div></div>
+      <div class="reach-card"><div class="reach-flag">🇬🇧</div><div class="reach-info"><h4>United Kingdom</h4><p>London, Manchester</p></div></div>
+      <div class="reach-card"><div class="reach-flag">🇦🇺</div><div class="reach-info"><h4>Australia</h4><p>Sydney, Melbourne</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" style="background: var(--dark2);">
+  <div class="why-grid reveal">
+    <div>
+      <div class="section-tag">Why DIGIMARKAD</div>
+      <h2 class="section-title">Where Strategy Isn't a Buzzword</h2>
+      <div class="blue-line"></div>
+      <ul class="why-list">
+        <li>
+          <div class="why-num">01</div>
+          <div class="why-text"><h4>AI-First Approach</h4><p>We use machine learning and predictive analytics to find opportunities your competitors miss entirely.</p></div>
+        </li>
+        <li>
+          <div class="why-num">02</div>
+          <div class="why-text"><h4>Full Transparency</h4><p>Real-time dashboards. Weekly reports. No vanity metrics — only the KPIs that actually impact your bottom line.</p></div>
+        </li>
+        <li>
+          <div class="why-num">03</div>
+          <div class="why-text"><h4>Multi-Region Expertise</h4><p>Deep market knowledge across Canada, USA, and India lets us tailor campaigns that resonate locally and convert globally.</p></div>
+        </li>
+        <li>
+          <div class="why-num">04</div>
+          <div class="why-text"><h4>Performance Guaranteed</h4><p>Our results-first model means we're incentivized to grow your revenue, not just run campaigns.</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="why-visual reveal">
+      <div style="font-family: var(--font-head); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem;">Live Performance Dashboard</div>
+      <div class="metric-row">
+        <span class="metric-label">Organic Traffic Growth</span>
+        <div style="display:flex;align-items:center;gap:0.8rem;"><span class="metric-val">+247%</span><span class="metric-change">↑ YOY</span></div>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Cost Per Acquisition</span>
+        <div style="display:flex;align-items:center;gap:0.8rem;"><span class="metric-val">-45%</span><span class="metric-change">↓ Reduced</span></div>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Conversion Rate</span>
+        <div style="display:flex;align-items:center;gap:0.8rem;"><span class="metric-val">8.4%</span><span class="metric-change">↑ +3.1%</span></div>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">ROAS (Return on Ad Spend)</span>
+        <div style="display:flex;align-items:center;gap:0.8rem;"><span class="metric-val">6.2x</span><span class="metric-change">↑ Avg</span></div>
+      </div>
+      <div class="metric-row">
+        <span class="metric-label">Revenue Generated</span>
+        <div style="display:flex;align-items:center;gap:0.8rem;"><span class="metric-val">$12.4M</span><span class="metric-change">↑ Q4</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="text-align:center;">
+    <div class="section-tag">Our Process</div>
+    <h2 class="section-title">How We Work</h2>
+    <div class="blue-line" style="margin: 1rem auto;"></div>
+  </div>
+  <div class="process-steps reveal">
+    <div class="process-step"><div class="step-num">01</div><h4>Discovery & Audit</h4><p>Deep-dive analysis of your brand, market, and competitors.</p></div>
+    <div class="process-step"><div class="step-num">02</div><h4>Strategy</h4><p>Custom 90-day marketing roadmap tailored to your goals.</p></div>
+    <div class="process-step"><div class="step-num">03</div><h4>Execute</h4><p>Launch campaigns across all relevant channels simultaneously.</p></div>
+    <div class="process-step"><div class="step-num">04</div><h4>Optimize</h4><p>Real-time A/B testing and performance refinement.</p></div>
+    <div class="process-step"><div class="step-num">05</div><h4>Scale</h4><p>Double down on winners and expand into new markets.</p></div>
+  </div>
+  <!-- TECH STACK -->
+  <div style="margin-top: 4rem;" class="reveal">
+    <div class="section-tag">Marketing Technology Stack</div>
+    <h3 style="font-family: var(--font-head); font-size: 1.4rem; font-weight: 700;">Tools We Use to Win</h3>
+    <div class="stack-grid">
+      <div class="stack-item">📊 Google Analytics 4</div>
+      <div class="stack-item">🔍 Semrush</div>
+      <div class="stack-item">📣 Meta Ads Manager</div>
+      <div class="stack-item">🤖 HubSpot CRM</div>
+      <div class="stack-item">📧 Klaviyo</div>
+      <div class="stack-item">⚡ Hotjar</div>
+      <div class="stack-item">🧪 Optimizely</div>
+      <div class="stack-item">📈 Looker Studio</div>
+      <div class="stack-item">🛒 Shopify</div>
+      <div class="stack-item">🔗 Zapier</div>
+      <div class="stack-item">🎯 Google Ads</div>
+      <div class="stack-item">💬 ManyChat</div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<section id="cases">
+  <div class="reveal">
+    <div class="section-tag">Case Studies</div>
+    <h2 class="section-title">Real Results,<br>Real Businesses</h2>
+    <div class="blue-line"></div>
+  </div>
+  <div class="cases-grid reveal">
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-tag-row"><span class="tag">E-Commerce</span><span class="tag">SEO + Ads</span></div>
+        <h3>Canadian Fashion Brand Increased Revenue by 320% in 8 Months</h3>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-val">320%</div><div class="case-metric-label">Revenue Growth</div></div>
+        <div class="case-metric"><div class="case-metric-val">4.8x</div><div class="case-metric-label">ROAS</div></div>
+        <div class="case-metric"><div class="case-metric-val">-38%</div><div class="case-metric-label">CAC</div></div>
+      </div>
+      <p class="case-desc">Deployed a full-funnel Google + Meta ads strategy combined with technical SEO overhaul. Organic traffic tripled within 90 days.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-tag-row"><span class="tag">SaaS</span><span class="tag">Performance</span></div>
+        <h3>US SaaS Startup Reduced Customer Acquisition Cost by 45%</h3>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-val">-45%</div><div class="case-metric-label">CAC Reduction</div></div>
+        <div class="case-metric"><div class="case-metric-val">2.4x</div><div class="case-metric-label">Trial Signups</div></div>
+        <div class="case-metric"><div class="case-metric-val">68%</div><div class="case-metric-label">Conversion Lift</div></div>
+      </div>
+      <p class="case-desc">Rebuilt their entire marketing funnel using AI-powered audience segmentation and high-converting landing pages.</p>
+    </div>
+    <div class="case-card">
+      <div class="case-header">
+        <div class="case-tag-row"><span class="tag">Local Business</span><span class="tag">SEO</span></div>
+        <h3>Indian Restaurant Chain Tripled Organic Traffic in 60 Days</h3>
+      </div>
+      <div class="case-metrics">
+        <div class="case-metric"><div class="case-metric-val">3x</div><div class="case-metric-label">Organic Traffic</div></div>
+        <div class="case-metric"><div class="case-metric-val">#1</div><div class="case-metric-label">Local Rankings</div></div>
+        <div class="case-metric"><div class="case-metric-val">+180%</div><div class="case-metric-label">Bookings</div></div>
+      </div>
+      <p class="case-desc">Executed hyper-local SEO and Google Business Profile optimization across 12 locations, dominating every local search term.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center;">
+    <div class="section-tag">Client Love</div>
+    <h2 class="section-title">What Our Clients Say</h2>
+    <div class="blue-line" style="margin: 1rem auto;"></div>
+  </div>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"DIGIMARKAD helped us grow our online revenue by 4x in just 6 months. Their team understood our brand instantly and built a strategy that actually converted."</p>
+      <div class="testi-author"><div class="testi-avatar">JR</div><div><div class="testi-name">James R.</div><div class="testi-role">E-Commerce Founder · Canada</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Their SEO strategy put our company on the first page of Google within 3 months. The organic lead flow we now have is incredible."</p>
+      <div class="testi-author"><div class="testi-avatar">SP</div><div><div class="testi-name">Sarah P.</div><div class="testi-role">SaaS CEO · United States</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The best digital marketing partner we've ever worked with. They treat your business like their own and never miss a deadline or a target."</p>
+      <div class="testi-author"><div class="testi-avatar">AK</div><div><div class="testi-name">Arjun K.</div><div class="testi-role">Startup Founder · India</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"We scaled our ad budget from $5k to $50k/month with confidence because DIGIMARKAD delivered consistent 6x ROAS the entire time."</p>
+      <div class="testi-author"><div class="testi-avatar">ML</div><div><div class="testi-name">Mark L.</div><div class="testi-role">DTC Brand Owner · UK</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"From zero social presence to 50k engaged followers in 4 months. The content strategy was fresh, brand-aligned, and drove real business results."</p>
+      <div class="testi-author"><div class="testi-avatar">PC</div><div><div class="testi-name">Priya C.</div><div class="testi-role">Fashion Brand · Australia</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Their AI-powered lead generation tool delivered 3x more qualified leads than our previous agency at half the cost. Game changer."</p>
+      <div class="testi-author"><div class="testi-avatar">DW</div><div><div class="testi-name">David W.</div><div class="testi-role">B2B Enterprise · USA</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="reveal">
+    <div class="section-tag">Insights & Resources</div>
+    <h2 class="section-title">Marketing Intelligence</h2>
+    <div class="blue-line"></div>
+  </div>
+  <div class="blog-grid reveal">
+    <div class="blog-card">
+      <div class="blog-thumb">🤖</div>
+      <div class="blog-body">
+        <div class="blog-cat">AI Marketing</div>
+        <h4>How AI is Transforming Digital Marketing in 2025</h4>
+        <p>Predictive analytics, automated campaigns, and machine learning are reshaping how brands connect with customers.</p>
+        <div class="blog-meta"><span>Mar 2025</span><span>8 min read</span></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">📈</div>
+      <div class="blog-body">
+        <div class="blog-cat">SEO</div>
+        <h4>The 2025 SEO Playbook: What Actually Works Now</h4>
+        <p>Core Web Vitals, E-E-A-T signals, and AI-generated content — here's what's moving the needle this year.</p>
+        <div class="blog-meta"><span>Feb 2025</span><span>11 min read</span></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">💰</div>
+      <div class="blog-body">
+        <div class="blog-cat">Growth Strategies</div>
+        <h4>How to Scale from $10k to $100k/Month with Paid Ads</h4>
+        <p>A step-by-step framework for scaling your ad spend without destroying your ROAS.</p>
+        <div class="blog-meta"><span>Jan 2025</span><span>9 min read</span></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">📊</div>
+      <div class="blog-body">
+        <div class="blog-cat">Data Analytics</div>
+        <h4>Building a Marketing Dashboard That Actually Drives Decisions</h4>
+        <p>Stop drowning in data. Here's how to build dashboards that surface insights and drive action.</p>
+        <div class="blog-meta"><span>Dec 2024</span><span>7 min read</span></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">🎯</div>
+      <div class="blog-body">
+        <div class="blog-cat">Digital Marketing</div>
+        <h4>Why Most Marketing Agencies Fail Their Clients (And How We're Different)</h4>
+        <p>Vanity metrics, poor communication, and no accountability — here's why we built DIGIMARKAD differently.</p>
+        <div class="blog-meta"><span>Nov 2024</span><span>6 min read</span></div>
+      </div>
+    </div>
+    <div class="blog-card">
+      <div class="blog-thumb">🌏</div>
+      <div class="blog-body">
+        <div class="blog-cat">Growth Strategies</div>
+        <h4>Expanding Your Brand Across Canada, USA & India: A Playbook</h4>
+        <p>Multi-market expansion requires localized strategy. Here's how to enter 3 markets without diluting your brand.</p>
+        <div class="blog-meta"><span>Oct 2024</span><span>10 min read</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE TOOLS -->
+<section id="tools" style="background: var(--dark2);">
+  <div class="reveal">
+    <div class="section-tag">Free Tools</div>
+    <h2 class="section-title">Lead Generation Tools</h2>
+    <div class="blue-line"></div>
+    <p class="section-sub">Use our free tools to get instant insights on your marketing performance.</p>
+  </div>
+  <div class="tools-grid reveal">
+    <!-- SEO AUDIT TOOL -->
+    <div class="tool-card">
+      <h3>🔍 Free SEO Audit Tool</h3>
+      <p>Enter your website URL for an instant SEO health check and quick-win recommendations.</p>
+      <input class="tool-input" type="url" id="seoUrl" placeholder="https://yourwebsite.com">
+      <button class="btn-primary" style="width:100%" onclick="runSeoAudit()">Run Free SEO Audit</button>
+      <div class="tool-result" id="seoResult">Your audit results will appear here...</div>
+    </div>
+    <!-- ROI CALCULATOR -->
+    <div class="tool-card">
+      <h3>💰 Marketing ROI Calculator</h3>
+      <p>See your potential revenue from investing in digital marketing.</p>
+      <div class="roi-calc">
+        <label>Monthly Ad Budget ($)</label>
+        <input class="tool-input" type="number" id="roiBudget" placeholder="5000" oninput="calcROI()">
+        <label>Expected ROAS (e.g. 4 = 4x)</label>
+        <input class="tool-input" type="number" id="roiRoas" placeholder="4" oninput="calcROI()">
+        <label>Profit Margin (%)</label>
+        <input class="tool-input" type="number" id="roiMargin" placeholder="40" oninput="calcROI()">
+      </div>
+      <div class="roi-output" id="roiOutput" style="display:none;">
+        <div class="roi-metric"><div class="roi-val" id="roiRev">—</div><div class="roi-lbl">Revenue</div></div>
+        <div class="roi-metric"><div class="roi-val" id="roiProfit">—</div><div class="roi-lbl">Profit</div></div>
+      </div>
+    </div>
+    <!-- WEBSITE ANALYSIS -->
+    <div class="tool-card">
+      <h3>⚡ Website Analysis Tool</h3>
+      <p>Get a quick performance score and conversion optimization tips for your site.</p>
+      <input class="tool-input" type="url" id="analyzeUrl" placeholder="https://yourwebsite.com">
+      <button class="btn-primary" style="width:100%" onclick="runAnalysis()">Analyze Website</button>
+      <div class="tool-result" id="analyzeResult">Analysis results will appear here...</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="reveal" style="text-align:center;">
+    <div class="section-tag">Frequently Asked Questions</div>
+    <h2 class="section-title">Got Questions?</h2>
+    <div class="blue-line" style="margin: 1rem auto;"></div>
+  </div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How much does digital marketing cost? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Our services are tailored to your goals and budget. We have packages starting from $1,500/month for startups and SMBs, with enterprise plans available for larger organizations. Book a free strategy call to get a custom quote.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How long does SEO take to show results? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Most clients begin seeing measurable improvements in 60–90 days. Significant ranking gains typically occur in months 3–6. However, some quick wins — like fixing technical issues and optimizing existing pages — can drive traffic improvements within the first 30 days.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What advertising budget do I need? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">We recommend a minimum of $2,000–$3,000/month in ad spend to generate meaningful data and results. For e-commerce brands looking to scale aggressively, $10k+ per month is ideal. We manage everything from media buying to creative and optimization.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What results can I realistically expect? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Results vary by industry, competition, and starting point. On average, our clients see 2–5x ROI within the first 6 months. Our case studies showcase specific results across e-commerce (320% revenue growth), SaaS (45% CAC reduction), and local business (3x organic traffic).</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">How do you report on performance? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">You receive a real-time dashboard with 24/7 access, weekly progress reports via email, and a monthly strategy review call with your dedicated account manager. We track every KPI that matters to your business — not vanity metrics.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Do you work with businesses outside Canada? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. We serve clients across Canada, USA, India, UK, and Australia. Our multi-region team ensures campaigns are culturally relevant and optimized for each market's unique search behavior and consumer preferences.</div></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">What makes DIGIMARKAD different from other agencies? <span class="chevron">▾</span></button>
+      <div class="faq-a"><div class="faq-a-inner">Three things: AI-powered strategy (not guesswork), full transparency with real-time reporting, and a performance-first model. We don't just run campaigns — we build scalable marketing systems that compound over time.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background: var(--dark2);">
+  <div class="reveal">
+    <div class="section-tag">Let's Talk</div>
+    <h2 class="section-title">Start Growing Today</h2>
+    <div class="blue-line"></div>
+  </div>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <h3>We'd Love to Hear From You</h3>
+      <div class="contact-detail">
+        <div class="contact-icon">📧</div>
+        <div><h5>Email Us</h5><p>hello@digimarkad.com</p><p>support@digimarkad.com</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">📞</div>
+        <div><h5>Call Us</h5><p>Canada: +1 (647) 555-0190</p><p>India: +91 98765 43210</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-icon">🌐</div>
+        <div><h5>Website</h5><p>www.digimarkad.com</p></div>
+      </div>
+      <div class="offices">
+        <h4>Global Offices</h4>
+        <div class="office-list">
+          <div class="office"><div class="office-dot"></div>Toronto, Ontario, Canada</div>
+          <div class="office"><div class="office-dot"></div>New York, USA</div>
+          <div class="office"><div class="office-dot"></div>Mumbai, India</div>
+          <div class="office"><div class="office-dot"></div>Delhi NCR, India</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div style="background: var(--dark3); border: 1px solid var(--border); border-radius: 12px; padding: 2.5rem;">
+        <h3 style="font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem;">Book a Free Strategy Call</h3>
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Your full name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="you@company.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Company & Website</label>
+          <input type="text" class="form-input" placeholder="Company name & URL">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Interested In</label>
+          <select class="form-input">
+            <option value="">Select a service...</option>
+            <option>SEO Services</option>
+            <option>Paid Advertising (Google/Meta)</option>
+            <option>Social Media Marketing</option>
+            <option>Content Marketing</option>
+            <option>AI Marketing Solutions</option>
+            <option>Full-Service Marketing</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Monthly Budget</label>
+          <select class="form-input">
+            <option value="">Select budget range...</option>
+            <option>$1,500 – $3,000/mo</option>
+            <option>$3,000 – $7,000/mo</option>
+            <option>$7,000 – $15,000/mo</option>
+            <option>$15,000+/mo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell us about your goals</label>
+          <textarea class="form-input" placeholder="What are you trying to achieve? Any context helps..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%; font-size: 1rem; padding: 1rem;" onclick="submitForm()">Book My Free Strategy Call →</button>
+        <p style="font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem;">Free 30-min call · No commitment · Get a custom proposal</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAD CAPTURE BANNER -->
+  <div class="lead-section reveal" style="margin-top: 4rem;">
+    <div class="section-tag" style="text-align:center;">Free Marketing Audit</div>
+    <h2>Not Ready to Talk Yet?<br>Get Your Free Audit First</h2>
+    <p>Enter your email and we'll send you a full marketing audit of your website — completely free, no strings attached.</p>
+    <div class="lead-form">
+      <input type="email" placeholder="your@email.com" id="leadEmail">
+      <button class="btn-primary" onclick="submitLead()">Get Free Audit</button>
+    </div>
+    <p style="font-size: 0.78rem; color: var(--muted); margin-top: 1rem;">Join 500+ businesses already growing with DIGIMARKAD</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#home" class="nav-logo" style="font-size: 1.8rem;">DIGIM<span>ARK</span>AD</a>
+      <p>AI-powered digital marketing agency scaling startups and enterprises across Canada, USA, and India since 2015.</p>
+      <div class="footer-newsletter">
+        <input type="email" class="footer-input" placeholder="your@email.com">
+        <button class="btn-primary" style="white-space: nowrap; padding: 0.6rem 1rem; font-size: 0.82rem;" onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">SEO Services</a></li>
+        <li><a href="#services">Paid Advertising</a></li>
+        <li><a href="#services">Social Media</a></li>
+        <li><a href="#services">Content Marketing</a></li>
+        <li><a href="#services">AI Marketing</a></li>
+        <li><a href="#services">Analytics</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#cases">Case Studies</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">Disclaimer</a></li>
+      </ul>
+      <h5 style="margin-top: 1.5rem;">Regions</h5>
+      <ul>
+        <li><a href="#">Canada</a></li>
+        <li><a href="#">United States</a></li>
+        <li><a href="#">India</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 DIGIMARKAD. All rights reserved. | www.digimarkad.com</p>
+    <div class="social-links">
+      <a href="#" class="social-link" title="LinkedIn">in</a>
+      <a href="#" class="social-link" title="Twitter/X">𝕏</a>
+      <a href="#" class="social-link" title="Instagram">ig</a>
+      <a href="#" class="social-link" title="Facebook">fb</a>
+      <a href="#" class="social-link" title="YouTube">yt</a>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT WIDGET -->
+<button class="chat-btn" onclick="toggleChat()" title="Chat with us">💬</button>
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">
+    <span>DIGIMARKAD Assistant</span>
+    <button onclick="toggleChat()" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;">✕</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">👋 Hi! I'm the DIGIMARKAD assistant. How can I help you grow your business today?</div>
+    <div class="chat-msg bot">You can ask me about our services, pricing, or book a free strategy call!</div>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">→</button>
+  </div>
+</div>
+
+<script>
+  // MOBILE MENU
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // SCROLL REVEAL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+
+  // FAQ TOGGLE
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-q.open').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.style.maxHeight = '0';
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
+  // SEO AUDIT TOOL
+  function runSeoAudit() {
+    const url = document.getElementById('seoUrl').value;
+    const result = document.getElementById('seoResult');
+    if (!url) { result.textContent = 'Please enter a URL to audit.'; return; }
+    result.innerHTML = '<em style="color:var(--blue)">⟳ Analyzing...</em>';
+    setTimeout(() => {
+      result.innerHTML = `<strong style="color:var(--blue)">SEO Audit Complete for ${url}</strong><br><br>
+      ✅ Page speed: Moderate (Score: 72/100)<br>
+      ⚠️ Meta descriptions: Some missing<br>
+      ✅ SSL certificate: Active<br>
+      ⚠️ Mobile optimization: Needs work<br>
+      ❌ Schema markup: Not detected<br>
+      ✅ Sitemap: Found<br><br>
+      <em style="color:var(--muted)">Book a free full audit for detailed recommendations →</em>`;
+    }, 1800);
+  }
+
+  // ROI CALCULATOR
+  function calcROI() {
+    const budget = parseFloat(document.getElementById('roiBudget').value) || 0;
+    const roas = parseFloat(document.getElementById('roiRoas').value) || 0;
+    const margin = parseFloat(document.getElementById('roiMargin').value) || 0;
+    if (budget && roas && margin) {
+      const revenue = budget * roas;
+      const profit = revenue * (margin / 100) - budget;
+      document.getElementById('roiOutput').style.display = 'grid';
+      document.getElementById('roiRev').textContent = '$' + revenue.toLocaleString();
+      document.getElementById('roiProfit').textContent = '$' + Math.round(profit).toLocaleString();
+    }
+  }
+
+  // WEBSITE ANALYSIS
+  function runAnalysis() {
+    const url = document.getElementById('analyzeUrl').value;
+    const result = document.getElementById('analyzeResult');
+    if (!url) { result.textContent = 'Please enter a URL to analyze.'; return; }
+    result.innerHTML = '<em style="color:var(--blue)">⟳ Scanning website...</em>';
+    setTimeout(() => {
+      result.innerHTML = `<strong style="color:var(--blue)">Analysis Complete</strong><br><br>
+      📊 Conversion Rate Estimate: 1.8% (Industry avg: 3.2%)<br>
+      🔍 SEO Health Score: 64/100<br>
+      📱 Mobile Score: 58/100 — Needs improvement<br>
+      ⚡ Load Time: ~3.4s — Above acceptable threshold<br>
+      📣 CTAs Detected: 2 (Recommended: 5+)<br><br>
+      <em style="color:var(--muted)">You're leaving leads on the table. Let us fix this →</em>`;
+    }, 2000);
+  }
+
+  // FORM SUBMIT
+  function submitForm() {
+    alert('🎉 Thank you! A DIGIMARKAD strategist will reach out within 24 hours to schedule your free strategy call.');
+  }
+  function submitLead() {
+    const email = document.getElementById('leadEmail').value;
+    if (!email) { alert('Please enter your email address.'); return; }
+    alert('🎉 Your free marketing audit is on its way to ' + email + '! Check your inbox within 2 hours.');
+    document.getElementById('leadEmail').value = '';
+  }
+  function subscribeNewsletter() {
+    alert('✅ You\'ve subscribed to the DIGIMARKAD newsletter! Expect weekly marketing insights in your inbox.');
+  }
+
+  // CHATBOT
+  function toggleChat() {
+    document.getElementById('chatBox').classList.toggle('open');
+  }
+  const chatResponses = {
+    'pricing': 'Our plans start at $1,500/month. We customize based on your goals! Book a free strategy call to get a quote.',
+    'seo': 'Our SEO services include Technical SEO, On-Page, Off-Page, Local, and Enterprise SEO. Most clients see results in 60-90 days.',
+    'ads': 'We manage Google Ads, Facebook, Instagram, LinkedIn, TikTok, and YouTube Ads. Average ROAS across our clients is 5.8x.',
+    'contact': 'You can reach us at hello@digimarkad.com or call +1 (647) 555-0190. Or just scroll up and fill the contact form!',
+    'services': 'We offer SEO, Paid Ads, Social Media, Content Marketing, AI Marketing Automation, and Data Analytics.',
+    'default': 'Great question! Book a free strategy call with our team and we\'ll walk you through exactly how we can help your business grow. 🚀'
+  };
+  function sendChat() {
+    const input = document.getElementById('chatInput');
+    const msgs = document.getElementById('chatMessages');
+    const text = input.value.trim();
+    if (!text) return;
+    msgs.innerHTML += `<div class="chat-msg user">${text}</div>`;
+    input.value = '';
+    const lower = text.toLowerCase();
+    let response = chatResponses.default;
+    for (const [key, val] of Object.entries(chatResponses)) {
+      if (lower.includes(key)) { response = val; break; }
+    }
+    setTimeout(() => {
+      msgs.innerHTML += `<div class="chat-msg bot">${response}</div>`;
+      msgs.scrollTop = msgs.scrollHeight;
+    }, 600);
+    msgs.scrollTop = msgs.scrollHeight;
+  }
+</script>
+</body>
+</html>
